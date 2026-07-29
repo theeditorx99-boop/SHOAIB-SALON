@@ -5,7 +5,13 @@ const servicesList = [
   'Hair Cut', 'Hair Color', 'Hair Straightening Treatments', 
   'Hair Care Treatments', 'Hair Styling', 'Makeup', 
   'Bridal Packages', 'Eyebrow & Lashes', 'Skin Care', 
-  'Nails', 'Pedicure & Manicure', 'Nail Care Packages'
+  'Nails', 'Pedicure & Manicure', 'Nail Care Packages',
+  'Deal 1', 'Deal 2', 'Deal 3', 'Deal 4',
+  'Deal 5', 'Deal 6', 'Deal 7', 'Deal 8',
+  'BARRAT 1 DAY PACKAGE', 'BARRAT DAY TREATMENTS',
+  'MEHNDI DAY TREATMENTS', 'VALIMA DAY TREATMENTS',
+  "3 DAY'S WEDDING PACKAGE(EXCLUSIVE DEAL)",
+  '3 DAYS WEDDING PACKAGE(STANDARD DEAL)'
 ];
 
 export function BookingSection() {
