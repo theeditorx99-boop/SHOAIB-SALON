@@ -15,7 +15,7 @@ export function Hero({ headline = "A considered approach to hair, grooming, beau
         className="w-full h-[60vh] md:h-[85vh] relative px-4 md:px-8"
       >
         <video 
-          src="/assets/Hero page vid.mp4" 
+          src="/assets/shoaib-welcome.mp4" 
           autoPlay 
           loop 
           muted 
