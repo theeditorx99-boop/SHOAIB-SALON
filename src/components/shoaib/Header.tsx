@@ -1,14 +1,17 @@
 import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false);
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const navItems = [
     { label: 'Welcome / Home', href: '#hero' },
     { label: 'Services Menu', href: '#services' },
-    { label: 'Our Story', href: '#story' },
+    { label: 'DEALS', href: '/deals' },
     { label: 'Gallery', href: '#gallery' },
     { label: 'Book Appointment', href: '#booking' },
     { label: 'Contact Us', href: '#contact' },
@@ -17,7 +20,19 @@ export function Header() {
   const scrollTo = (href: string) => {
     setIsOpen(false);
     setTimeout(() => {
-      document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      if (href.startsWith('/')) {
+        navigate(href);
+        window.scrollTo(0, 0);
+      } else {
+        if (location.pathname !== '/') {
+          navigate(`/${href}`);
+          setTimeout(() => {
+            document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+          }, 100);
+        } else {
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
     }, 300);
   };
 

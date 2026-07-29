@@ -1,4 +1,8 @@
+import { useLocation, useNavigate } from 'react-router-dom';
+
 export function Footer() {
+  const location = useLocation();
+  const navigate = useNavigate();
   const socials = [
     { name: 'Instagram', href: 'https://www.instagram.com/shoaibsalonofficial?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==' },
     { name: 'Facebook', href: 'https://www.facebook.com/SHOAIBBASHIROFFICIAL/' },
@@ -7,10 +11,28 @@ export function Footer() {
   const links = [
     { name: 'Home', href: '#hero' },
     { name: 'Services', href: '#services' },
-    { name: 'Our Story', href: '#' },
+    { name: 'DEALS', href: '/deals' },
+    { name: 'Our Story', href: '#story' },
     { name: 'Careers', href: '#' },
     { name: 'Contact', href: '#booking' },
   ];
+
+  const handleLinkClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    if (href.startsWith('/')) {
+      navigate(href);
+      window.scrollTo(0, 0);
+    } else {
+      if (location.pathname !== '/') {
+        navigate(`/${href}`);
+        setTimeout(() => {
+          document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+        }, 100);
+      } else {
+        document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  };
 
   return (
     <footer className="w-full bg-white border-t border-gray-200 pt-20 md:pt-32 flex flex-col relative overflow-hidden">
@@ -46,7 +68,7 @@ export function Footer() {
             <ul className="flex flex-col gap-3 md:items-end">
               {links.map(link => (
                 <li key={link.name}>
-                  <a href={link.href} className="text-sm md:text-base font-mono uppercase tracking-widest hover:text-gray-500 transition-colors">
+                  <a href={link.href} onClick={(e) => handleLinkClick(e, link.href)} className="text-sm md:text-base font-mono uppercase tracking-widest hover:text-gray-500 transition-colors">
                     {link.name}
                   </a>
                 </li>

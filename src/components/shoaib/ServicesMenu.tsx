@@ -1,4 +1,6 @@
 import { motion } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
 
 const categories = [
   {
@@ -77,6 +79,30 @@ const categories = [
 ];
 
 export function ServicesMenu() {
+  const navigate = useNavigate();
+  const [activeSection, setActiveSection] = useState<string>('');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        // Find all intersecting entries
+        const intersecting = entries.filter(entry => entry.isIntersecting);
+        if (intersecting.length > 0) {
+          // If multiple, pick the first one (top-most in view)
+          setActiveSection(intersecting[0].target.id);
+        }
+      },
+      { rootMargin: '-20% 0px -70% 0px' }
+    );
+
+    categories.forEach((cat) => {
+      const el = document.getElementById(cat.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
+  }, []);
+
   const scrollToBooking = (categoryId: string) => {
     const bookingSection = document.getElementById('booking');
     if (bookingSection) {
@@ -106,11 +132,20 @@ export function ServicesMenu() {
               <a 
                 key={cat.id} 
                 href={`#${cat.id}`} 
-                className="hover:text-black transition-colors"
+                className={`transition-colors ${activeSection === cat.id ? 'text-black font-bold' : 'hover:text-black'}`}
               >
                 {cat.title}
               </a>
             ))}
+            <button 
+              onClick={() => {
+                navigate('/deals');
+                window.scrollTo(0, 0);
+              }}
+              className="text-left hover:text-black transition-colors"
+            >
+              DEALS
+            </button>
           </div>
         </aside>
 

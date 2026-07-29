@@ -1,6 +1,10 @@
 import { motion } from 'framer-motion';
 
-export function Hero() {
+interface HeroProps {
+  headline?: string;
+}
+
+export function Hero({ headline = "A considered approach to hair, grooming, beauty, and personal style." }: HeroProps) {
   return (
     <section id="hero" className="w-full bg-white flex flex-col">
       {/* Video Container */}
@@ -28,7 +32,7 @@ export function Hero() {
         className="w-full flex justify-center py-16 md:py-24 px-6"
       >
         <p className="text-sm md:text-xl text-black font-medium tracking-widest max-w-3xl mx-auto uppercase text-center leading-relaxed font-sans">
-          A considered approach to hair, grooming, beauty, and personal style.
+          {headline}
         </p>
       </motion.div>
     </section>
