@@ -12,7 +12,7 @@ export function Header() {
     { label: 'Welcome / Home', href: '#hero' },
     { label: 'Services Menu', href: '#services' },
     { label: 'DEALS', href: '/deals' },
-    { label: 'Gallery', href: '#gallery' },
+    { label: 'Gallery', href: '/gallery' },
     { label: 'Book Appointment', href: '#booking' },
     { label: 'Contact Us', href: '#contact' },
   ];

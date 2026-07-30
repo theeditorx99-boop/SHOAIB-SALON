@@ -12,6 +12,7 @@ export function Footer() {
     { name: 'Home', href: '#hero' },
     { name: 'Services', href: '#services' },
     { name: 'DEALS', href: '/deals' },
+    { name: 'Gallery', href: '/gallery' },
     { name: 'Our Story', href: '#story' },
     { name: 'Careers', href: '#' },
     { name: 'Contact', href: '#booking' },
