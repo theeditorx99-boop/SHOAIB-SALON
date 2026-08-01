@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const servicesList = [
   'Hair Cut', 'Hair Color', 'Hair Straightening Treatments', 
   'Hair Care Treatments', 'Hair Styling', 'Makeup', 
-  'Bridal Packages', 'Eyebrow & Lashes', 'Skin Care', 
+  'GROOM PACKAGES', 'Eyebrow & Lashes', 'Skin Care', 
   'Nails', 'Pedicure & Manicure', 'Nail Care Packages',
   'Deal 1', 'Deal 2', 'Deal 3', 'Deal 4',
   'Deal 5', 'Deal 6', 'Deal 7', 'Deal 8',

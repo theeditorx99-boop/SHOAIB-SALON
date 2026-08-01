@@ -6,7 +6,7 @@ const categories = [
   {
     id: 'hair-cut',
     title: 'Hair Cut',
-    image: '/assets/Haircut.mp4',
+    image: '/assets/haircut.webp',
     services: [
       { name: 'Director Cut', price: 'PKR 15,000' },
       { name: 'Senior Stylist Cut', price: 'PKR 8,000' },
@@ -28,7 +28,7 @@ const categories = [
   {
     id: 'hair-styling',
     title: 'Hair Styling',
-    image: '/assets/Hair styling.mp4',
+    image: '/assets/Hair Styling.webp',
     services: [
       { name: 'Blow Dry (Classic)', price: 'PKR 4,000' },
       { name: 'Blow Dry (Volume/Curls)', price: 'PKR 5,500' },
@@ -46,9 +46,9 @@ const categories = [
     ]
   },
   {
-    id: 'bridal-packages',
-    title: 'Bridal Packages',
-    image: '/assets/Bridal package.mp4',
+    id: 'groom-packages',
+    title: 'GROOM PACKAGES',
+    image: '/assets/Grooms.jpg',
     services: [
       { name: 'Bridal Baraat', price: 'PKR 120,000' },
       { name: 'Bridal Valima', price: 'PKR 100,000' },
@@ -59,7 +59,7 @@ const categories = [
   {
     id: 'skin-care',
     title: 'Skin Care',
-    image: '/assets/Skin care.mp4',
+    image: '/assets/Skin care.jpg',
     services: [
       { name: 'Express Facial', price: 'PKR 5,000' },
       { name: 'Deep Cleansing', price: 'PKR 8,500' },
