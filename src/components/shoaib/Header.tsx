@@ -45,6 +45,7 @@ export function Header() {
         className="w-full bg-white text-black relative flex flex-col items-center justify-center pt-10 pb-6"
       >
         <div className="flex flex-col items-center text-center">
+          <img src="/assets/logo salon.png" alt="Shoaib Salon Logo" className="h-24 md:h-32 mb-4 md:mb-8 object-contain" />
           <h1 className="text-6xl md:text-[100px] lg:text-[140px] font-display font-normal tracking-wide uppercase leading-none">
             SHOAIB SALON
           </h1>
